@@ -27,7 +27,7 @@ public class SkoogControllerScript : MonoBehaviour
     void Movement()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
-        skoogAnimator.SetFloat("Speed", Mathf.Abs(moveHorizontal));
+        skoogAnimator.SetFloat("Speed", Mathf.Abs(rb2d.velocity.magnitude));
         Vector2 movement = new Vector2(moveHorizontal, rb2d.velocity.y);
         if (rb2d.velocity.magnitude < maxSpeed)
         {
