@@ -44,6 +44,7 @@ public class SkoogControllerScript : MonoBehaviour
     void Movement()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
+        skoogAnimator.SetFloat("IsRunning", Mathf.Abs(moveHorizontal));
         skoogAnimator.SetFloat("groundSpeed", Mathf.Abs(rb2d.velocity.x));
         Vector2 movement = new Vector2(moveHorizontal, 0);
 
